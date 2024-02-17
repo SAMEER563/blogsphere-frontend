@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=League+Spartan:wght@100&family=Montserrat&family=Noto+Serif&family=Poppins:wght@100;200;400&family=Rubik+Vinyl&display=swap');
+
+
+:root {
+  --color-primary: #6f6af8;
+--color-white:#fff;
+
+--color-red: rgb(255, 63, 63);
+--color-gray-100: hsl(220, 20%, 10%, 5%);
+--color-gray-200: hs (220, 20%, 10%, 10%);
+--color-gray-300: hsl(220, 20%, 10%, 25%);
+--color-gray-500: hsl(220, 20%, 10%, 50%);
+--color-gray-700:#252542;
+--color-gray-900: #0c0c22;
+
+--color-bg: hwb (240 95% 0%);
+
+--transition: all 300ms ease;
+
+
+--container-width-1g: 84%;
+--container-width-md: 92%;
+--form-width: 50%;
+
+--radius-1: 0.3rem;
+--radius-2: 0.6rem;
+--radius-3: 1rem;
+--radius-4: 2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:"Poppins, sans-sarif";
+  background: var(--color-bg);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+.nav__logo {
+  width: 3rem;
+  display: block;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
 }
