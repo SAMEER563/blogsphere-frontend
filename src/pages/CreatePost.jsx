@@ -34,7 +34,7 @@ const CreatePost = () => {
   ]
 
   return (
-    <secition className="create-post">
+    <section className="create-post">
       <div className="container">
         <h2>Create Post</h2>
         <p className='form__error-message'>
@@ -52,7 +52,7 @@ const CreatePost = () => {
             <button type='submit' className='btn primary'>Create</button>
         </form>
       </div>
-    </secition>
+    </section>
   )
 }
 
