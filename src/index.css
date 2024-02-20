@@ -566,6 +566,20 @@ input, select, textarea{
 }
 
 
+/* custom style for react quill */
+
+.ql-editor {
+  overflow: scroll;
+  background: var(--color-white);
+  height: 10rem !important;
+}
+
+
+
+
+
+
+
 
 /*==============================Authors ===================*/
 
