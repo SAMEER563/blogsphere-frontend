@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../context/userContext'
 
 
 
@@ -10,6 +12,19 @@ const EditPost = () => {
   const [category, setCategory] = useState('Uncategorized')
   const [description, setDescription] = useState('')
   const [thumbnail, setThumbnail] = useState('')
+
+  const navigate = useNavigate()
+  
+  const {currentUser} = useContext(UserContext)
+  const token = currentUser?.token;
+
+
+// redirect to login page for any user who isn't looged in
+useEffect(() => {
+  if(!token) {
+    navigate('/login')
+  }
+}, [] ) 
 
 
    const modules = {

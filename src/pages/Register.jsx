@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 const Register = () => {
   const [userData, setuserData] = useState({
@@ -9,18 +10,38 @@ const Register = () => {
     password2: "",
   });
 
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
+
   const changeInputHandler = (e) => {
     setuserData((prevState) => {
       return { ...prevState, [e.target.name]: e.target.value };
     });
   };
 
+  const registerUser = async (e) => {
+   e.preventDefault();
+   setError('')
+   try {
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/register`, userData);
+    const newUser = await response.data;
+    console.log(newUser)
+    if(!newUser) {
+      setError("Couldn't register user. Please try again.")
+    }
+    navigate('/login')
+   } catch (err) {
+     setError(err.response.data.messege)
+   }
+
+  }
+
   return (
     <section className="register">
       <div className="container">
         <h2>Sign Up</h2>
-        <form className="form register__form">
-          <p className="form__error-message">This is an error message</p>
+        <form className="form register__form" onSubmit={registerUser}>
+          {error && <p className="form__error-message">{error}</p>}
           <input
             type="text"
             placeholder="Full Name"
