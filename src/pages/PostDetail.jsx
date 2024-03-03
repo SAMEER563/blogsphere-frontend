@@ -23,7 +23,7 @@ const PostDetail = () => {
       try {
        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${id}`)
        setPost(response.data) 
-     
+   
       } catch (error) {
         setError(error)
       }

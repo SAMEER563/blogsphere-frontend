@@ -4,7 +4,7 @@ import PostAuthor from './PostAuthor'
 
 
 const PostItem = ({postID, category, description, authorID, title, createdAt, thumbnail}) => {
-      const shortDesc = description.length > 145 ? description.substr(0, 145) + "..." : description;
+      const shortDescription = description.length > 145 ? description.substr(0, 145) + "..." : description;
       const postTitle = title.length > 30 ? title.substr(0, 30) + "..." : title;
   return (
    <article className="post">
@@ -15,7 +15,7 @@ const PostItem = ({postID, category, description, authorID, title, createdAt, th
         <Link to={`/posts/${postID}`}>
             <h3>{postTitle}</h3>
         </Link>
-        <p>{shortDesc}</p>
+        <p dangerouslySetInnerHTML={{__html: shortDescription}}></p>
         <div className="post__footer">
             <PostAuthor authorID={authorID} createdAt={createdAt}/>
             <Link to={`/posts/categories/${category}`} className='btn category'>{category}</Link>

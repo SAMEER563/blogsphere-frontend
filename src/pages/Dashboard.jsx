@@ -23,7 +23,7 @@ useEffect(() => {
   return (
    <section className="dashboard">
     {
-      posts.length ? <div className="container dashboard__container">
+      posts.length ? <div className="dashboard__container">
         {
           posts.map(post => {
             return <article key={post.id} className='dashboard__post'>
@@ -48,3 +48,7 @@ useEffect(() => {
 }
 
 export default Dashboard
+
+
+
+

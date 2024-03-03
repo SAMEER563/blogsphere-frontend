@@ -44,7 +44,7 @@ useEffect(() => {
     'link', 'image',
    ]
 
-   const POST_CATEGORIES = ["Agriculture", "Bussiness", "Education", "Entertainment", "Art", "Investment",
+   const POST_CATEGORIES = ["Agriculture", "Business", "Education", "Entertainment", "Art", "Investment",
    "Uncategorised", "weather"
   ]
 
